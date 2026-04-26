@@ -1,7 +1,7 @@
 name: Build and Deploy
 on:
   push:
-    branches: [main] # If your branch is named 'master', change this to master
+    branches: [main] # Change to 'master' if your main branch is named master
 permissions:
   contents: write
 jobs:
@@ -16,13 +16,15 @@ jobs:
         with:
           node-version: 20
 
-      - name: Install and Build
-        run: |
-          npm install
-          npm run build
+      - name: Install Dependencies
+        # This flag fixes the ERESOLVE error from your screenshot
+        run: npm install --legacy-peer-deps
+
+      - name: Build Project
+        # CI=false ensures the build doesn't fail if there are minor CSS warnings
+        run: CI=false npm run build
 
       - name: Deploy to GitHub Pages
         uses: JamesIves/github-pages-deploy-action@v4
         with:
-          folder: dist # This pushes the 'dist' folder to a special branch
-
+          folder: dist
