@@ -3,22 +3,29 @@ import react from '@vitejs/plugin-react';
 import path from 'path';
 
 export default defineConfig({
-  // Use './' instead of '/Listening/'. 
-  // This tells the app to look in the EXACT folder it is currently in.
-  base: './', 
+  // CRITICAL: This is the exact path for your GitHub repository
+  base: '/Listening/', 
   
   plugins: [react()],
+  
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
     },
   },
+
   build: {
     outDir: 'dist',
-    assetsDir: 'assets',
+    emptyOutDir: true, // Cleans the folder before building
+    chunkSizeWarningLimit: 1500, // Hides annoying size warnings
   },
+
+  server: {
+    host: true
+  },
+
+  // Keeps your 32-bit phone happy while the 64-bit Mac builds it
   css: {
     transformer: 'postcss',
   }
 });
-
