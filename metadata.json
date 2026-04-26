@@ -1,0 +1,6 @@
+{
+  "name": "English App Evaluator",
+  "description": "Evaluates Vietnamese student speaking videos using Gemini AI.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}

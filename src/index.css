@@ -1,0 +1,177 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Nunito", ui-sans-serif, system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--color-rose-50);
+  background-image: 
+    radial-gradient(var(--color-rose-200) 1.5px, transparent 1.5px),
+    radial-gradient(var(--color-rose-200) 1.5px, transparent 1.5px);
+  background-size: 30px 30px;
+  background-position: 0 0, 15px 15px;
+  color: var(--color-slate-900);
+  font-family: var(--font-sans);
+}
+
+.markdown-body h3 {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: var(--color-rose-900);
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+/* Excel Style Table */
+.excel-table {
+  width: 100%;
+  min-width: 900px;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 15px;
+  color: #000;
+  background: #fff;
+  border: 1px solid #000;
+  margin-bottom: 2rem;
+}
+
+.excel-table p {
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+.excel-table p:last-child {
+  margin-bottom: 0;
+}
+
+.excel-table th, .excel-table td {
+  border: 1px solid #000;
+  padding: 8px 12px;
+  vertical-align: middle;
+}
+
+.excel-table .header-blue {
+  background-color: #c9daf8;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+  font-size: 16px;
+  padding: 12px;
+}
+
+.excel-table .header-yellow {
+  background-color: #fff2cc;
+  color: #000;
+  font-weight: bold;
+  text-align: center;
+}
+
+.excel-table .bold-col {
+  font-weight: bold;
+  text-align: left;
+  white-space: nowrap;
+}
+
+.excel-table .value-col {
+  text-align: left;
+}
+.excel-table .value-col div {
+  background-color: #f3f3f3;
+  padding: 4px 12px;
+  border-radius: 12px;
+  display: inline-block;
+  font-weight: bold;
+  min-width: 150px;
+}
+
+.excel-table .criteria-col {
+  text-align: center;
+}
+
+.excel-table .result-col {
+  text-align: center;
+}
+
+.excel-table .notes-col {
+  text-align: left;
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.excel-table .badge-dat {
+  background-color: #d9ead3;
+  color: #274e13;
+  padding: 4px 16px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.excel-table .badge-dat::after {
+  content: "▼";
+  font-size: 10px;
+}
+
+.excel-table .badge-chua-dat {
+  background-color: #fce5cd;
+  color: #b45f06;
+  padding: 4px 16px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.excel-table .badge-chua-dat::after {
+  content: "▼";
+  font-size: 10px;
+}
+
+.excel-table .badge-can-cai-thien {
+  background-color: #fff2cc;
+  color: #b45f06;
+  padding: 4px 16px;
+  border-radius: 4px;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: bold;
+  white-space: nowrap;
+}
+.excel-table .badge-can-cai-thien::after {
+  content: "▼";
+  font-size: 10px;
+}
+
+.markdown-body ul {
+  list-style-type: none;
+  padding-left: 0;
+  margin: 0;
+}
+
+.markdown-body ul li {
+  position: relative;
+  padding-left: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-body ul li::before {
+  content: "✨";
+  position: absolute;
+  left: -0.2rem;
+  top: 0.05rem;
+  font-size: 0.8em;
+}
+
+.markdown-body p {
+  margin: 0.25rem 0;
+}
+
+.markdown-body strong {
+  font-weight: 800;
+}
