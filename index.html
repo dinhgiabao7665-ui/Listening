@@ -14,6 +14,16 @@
   </head>
   <body>
     <div id="root"></div>
+    <script>
+      window.onerror = function (message, source, lineno, colno, error) {
+        var errorDiv = document.createElement('div');
+        errorDiv.style = 'background: #fee;color: #a00;padding: 1em;position: fixed;top:0;left:0;z-index:9999;width:100vw;overflow:auto;';
+        errorDiv.innerText = 'JS Error: ' + message +
+          '\nSource: ' + source +
+          '\nLine: ' + lineno + ', Column: ' + colno +
+          (error && error.stack ? '\nStack: ' + error.stack : '');
+        document.body.appendChild(errorDiv);
+      };
+    </script>
   </body>
 </html>
-
